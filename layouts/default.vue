@@ -59,7 +59,7 @@ export default {
 <style lang="scss">
 .page-enter-active,
 .page-leave-active {
-  transition: 0.5s;
+  transition: 300ms ease-in;
 }
 .page-enter,
 .page-leave-active {
@@ -68,6 +68,16 @@ export default {
 
 .page-leave-active {
   transform: translateY(-50px);
+}
+
+.container {
+  transform: translateY(25px);
+  transition: 600ms ease-out;
+
+  &.hidden {
+    transform: translateY(0px);
+    transition: 300ms ease-in;
+  }
 }
 
 .mobile {
@@ -104,16 +114,6 @@ button {
   background: none;
   border: 0;
   font-size: 100%;
-}
-
-.container {
-  transform: translateY(-25px);
-  transition: 600ms ease-out;
-
-  &.hidden {
-    transform: translateY(0px);
-    transition: 300ms ease-in;
-  }
 }
 
 body {
@@ -179,7 +179,7 @@ hr {
   }
 }
 
-p {
+p, ul {
   line-height: 1.5;
   list-style-position: inside;
 }
